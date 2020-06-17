@@ -19,11 +19,4 @@ tasks {
     compileKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
-    jar {
-        doFirst {
-            from({
-                configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) }
-            })
-        }
-    }
 }
